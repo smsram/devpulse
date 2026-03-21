@@ -1,0 +1,265 @@
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+}
+
+.register-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  z-index: 50;
+}
+
+.register-logo {
+  text-decoration: none;
+}
+
+.register-logo .logo-text {
+  font-family: var(--font-headline);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.05em;
+}
+
+.register-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 4rem;
+}
+
+.register-card-wrapper {
+  width: 100%;
+  max-width: 440px;
+  animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.register-card {
+  background-color: var(--surface-container-lowest);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 12px 40px rgba(70, 72, 212, 0.08);
+  margin-bottom: 2rem;
+}
+
+.card-intro {
+  margin-bottom: 2.5rem;
+}
+
+.card-title {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--on-surface);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+}
+
+.form-group input {
+  height: 3rem;
+  padding: 0 1rem;
+  background-color: var(--surface-container-low);
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  color: var(--on-surface);
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  background-color: var(--surface-container-lowest);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.github-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.github-prefix {
+  position: absolute;
+  left: 1rem;
+  font-size: 0.875rem;
+  color: var(--outline-variant);
+  pointer-events: none;
+}
+
+#github {
+  padding-left: 5.8rem;
+  width: 100%;
+}
+
+.btn-register {
+  margin-top: 1rem;
+  height: 3rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: var(--on-primary);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-family: var(--font-headline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-register:hover {
+  box-shadow: 0 10px 20px rgba(70, 72, 212, 0.2);
+  transform: translateY(-1px);
+}
+
+.card-footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.card-footer p {
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+}
+
+.login-link {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 0.3rem;
+}
+
+.security-insight-card {
+  background-color: rgba(242, 244, 246, 0.5);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.security-icon-box {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(70, 72, 212, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.security-icon-box .material-symbols-outlined {
+  font-variation-settings: 'FILL' 1;
+}
+
+.security-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+.security-desc {
+  font-size: 0.688rem;
+  color: var(--on-surface-variant);
+}
+
+.register-footer {
+  padding: 2rem;
+  border-top: 1px solid rgba(199, 196, 215, 0.1);
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-copyright {
+  font-size: 0.75rem;
+  color: var(--on-surface-variant);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  font-size: 0.75rem;
+  color: var(--on-surface-variant);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  overflow-y: auto;
+}
+
+.register-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background: var(--surface);
+  z-index: 50;
+}
+
+.register-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Ensure form clears the header on mobile devices */
+  padding: 100px 1.5rem 4rem; 
+  width: 100%;
+}

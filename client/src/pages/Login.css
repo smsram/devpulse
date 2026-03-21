@@ -1,0 +1,252 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+}
+
+.login-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo-box {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--primary);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-box .material-symbols-outlined {
+  color: white;
+  font-size: 1.25rem;
+  font-variation-settings: 'FILL' 1;
+}
+
+.logo-text {
+  font-family: var(--font-headline);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.05em;
+}
+
+.login-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.ambient-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background-color: var(--primary);
+  opacity: 0.05;
+  filter: blur(80px);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.login-card-wrapper {
+  width: 100%;
+  max-width: 440px;
+  z-index: 10;
+  animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.login-card {
+  background-color: var(--surface-container-lowest);
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(70, 72, 212, 0.08);
+}
+
+.card-intro {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.card-title {
+  font-family: var(--font-headline);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--on-surface);
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.05em;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-link {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.form-group input {
+  height: 3rem;
+  padding: 0 1rem;
+  background-color: var(--surface-container-low);
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  color: var(--on-surface);
+  transition: all 0.2s;
+}
+
+.form-group input::placeholder {
+  color: var(--outline-variant);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: var(--surface-container-lowest);
+  box-shadow: 0 0 0 4px rgba(70, 72, 212, 0.1);
+}
+
+.btn-signin {
+  margin-top: 1rem;
+  height: 3rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-container));
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-family: var(--font-headline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(70, 72, 212, 0.25);
+  transition: transform 0.2s;
+}
+
+.btn-signin:hover {
+  transform: scale(0.98);
+}
+
+.btn-signin:active {
+  transform: scale(0.95);
+}
+
+.card-footer {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.card-footer p {
+  font-size: 0.875rem;
+  color: var(--on-surface-variant);
+}
+
+.signup-link {
+  color: var(--primary);
+  font-weight: 800;
+  text-decoration: none;
+  margin-left: 0.25rem;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+.login-footer-links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+
+.login-footer-links:hover {
+  opacity: 1;
+}
+
+.login-footer-links a {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--on-surface);
+  text-decoration: none;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  /* Ensure page handles overflow correctly */
+  overflow-y: auto; 
+}
+
+.login-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background: var(--surface); /* Add background to prevent transparency overlap */
+  z-index: 50;
+}
+
+.login-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* Add padding top to clear the 80px fixed header */
+  padding: 100px 1.5rem 4rem; 
+  width: 100%;
+}

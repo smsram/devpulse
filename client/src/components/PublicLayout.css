@@ -1,0 +1,186 @@
+/* Layout Wrapper - Restored to standard block layout to preserve margins */
+.public-layout-wrapper { 
+  background: var(--surface); 
+  min-height: 100vh;
+}
+
+/* Main Content - Using your calc() method to push footer down safely */
+.public-main,
+.public-main-content { 
+  min-height: calc(100vh - 150px); /* Fills screen minus header/footer heights */
+  padding-top: 4.5rem; /* Account for fixed header */
+}
+
+/* Shared Container constraint */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Header --- */
+.public-topbar {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px); 
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(70, 72, 212, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+.public-nav {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  height: 4.5rem;
+  max-width: 1280px; 
+  margin: 0 auto; 
+  padding: 0 2rem;
+}
+
+.nav-left { 
+  display: flex; 
+  align-items: center; 
+  gap: 2.5rem; 
+}
+
+/* FIXED: Exact spacing between Login and Sign Up buttons */
+.nav-right, 
+.public-nav-actions { 
+  display: flex; 
+  align-items: center; 
+  gap: 1rem; /* The perfect gap */
+}
+
+.logo, 
+.public-logo {
+  font-size: 1.5rem; 
+  font-weight: 800; 
+  color: var(--primary);
+  font-family: var(--font-headline); 
+  letter-spacing: -0.05em; 
+  text-decoration: none;
+}
+
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a {
+  text-decoration: none; 
+  font-family: var(--font-headline); 
+  font-size: 0.9rem; 
+  font-weight: 600;
+  color: var(--on-surface-variant); 
+  transition: color 0.2s ease; 
+  position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+.nav-links a.active::after {
+  content: ''; 
+  position: absolute; 
+  bottom: -4px; 
+  left: 0; 
+  width: 100%; 
+  height: 2px;
+  background-color: var(--primary); 
+  border-radius: 2px;
+}
+
+/* --- Buttons --- */
+.btn, 
+.btn-primary, 
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem; 
+  border-radius: 0.5rem; 
+  font-weight: 700; 
+  font-size: 0.9rem; 
+  text-decoration: none; 
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: var(--font-headline);
+  cursor: pointer;
+  border: none;
+}
+
+.btn:active, 
+.btn-primary:active, 
+.btn-outline:active { 
+  transform: scale(0.96); 
+}
+
+.btn-outline { 
+  background: transparent; 
+  color: var(--on-surface); 
+  border: 1px solid var(--outline-variant); 
+}
+
+.btn-outline:hover { 
+  background: var(--surface-container-low); 
+  border-color: var(--outline); 
+}
+
+.btn-primary { 
+  background: linear-gradient(135deg, var(--primary), var(--primary-container)); 
+  color: var(--on-primary); 
+  box-shadow: 0 4px 12px rgba(70, 72, 212, 0.25); 
+}
+
+.btn-primary:hover { 
+  box-shadow: 0 6px 16px rgba(70, 72, 212, 0.35); 
+  transform: translateY(-1px); 
+}
+
+
+/* --- New Centered Footer --- */
+.public-footer {
+  background: white; 
+  border-top: 1px solid var(--surface-container-high); 
+  padding: 3rem 0; 
+  /* Removed margin-top: auto; to prevent margin collapsing conflicts */
+}
+
+.footer-content { 
+  max-width: 1280px; 
+  margin: 0 auto; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 1.5rem; 
+  padding: 0 2rem;
+}
+
+.footer-logo { 
+  font-family: var(--font-headline); 
+  font-weight: 800; 
+  font-size: 1.25rem; 
+  color: var(--on-surface); 
+}
+
+.footer-links { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 2rem; 
+}
+
+.footer-links a { 
+  color: var(--outline); 
+  text-decoration: none; 
+  font-weight: 600; 
+  font-size: 0.9rem; 
+  transition: color 0.2s ease; 
+}
+
+.footer-links a:hover { 
+  color: var(--primary); 
+}
+
+.footer-copyright { 
+  color: var(--outline-variant); 
+  font-size: 0.85rem; 
+  margin: 0;
+}

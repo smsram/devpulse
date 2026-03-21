@@ -1,0 +1,235 @@
+.legal-wrapper {
+  background-color: var(--surface);
+  padding: 4rem 1rem;
+}
+
+.legal-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.legal-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.legal-back-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+
+.legal-back-link:hover {
+  transform: translateX(-4px);
+}
+
+.legal-badge {
+  background-color: var(--secondary-fixed);
+  color: var(--on-secondary-fixed);
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.legal-card {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 3rem;
+  box-shadow: 0 12px 40px rgba(70, 72, 212, 0.06);
+  border: 1px solid var(--surface-container);
+}
+
+@media (max-width: 640px) {
+  .legal-card { padding: 1.5rem; }
+}
+
+.legal-header {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--surface-container-high);
+  padding-bottom: 2rem;
+}
+
+.legal-title {
+  font-family: var(--font-headline);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--on-surface);
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.legal-subtitle {
+  color: var(--on-surface-variant);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* TL;DR Box */
+.legal-tldr {
+  background-color: rgba(70, 72, 212, 0.05);
+  border: 1px solid rgba(70, 72, 212, 0.1);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.tldr-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.tldr-header h3 {
+  font-weight: 800;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.tldr-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tldr-list li {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+}
+
+.tldr-list li span {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Main Content Typography */
+.legal-content h2 {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 2.5rem 0 1rem 0;
+  color: var(--on-surface);
+}
+
+.legal-content p {
+  line-height: 1.8;
+  color: var(--on-surface-variant);
+  margin-bottom: 1.25rem;
+}
+
+.legal-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.legal-content li {
+  color: var(--on-surface-variant);
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer Actions */
+.legal-footer-actions {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--surface-container-high);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.legal-footer-actions p {
+  font-size: 0.9rem;
+  color: var(--on-surface-variant);
+}
+
+.legal-footer-actions a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.legal-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Print Styles */
+@media print {
+  .legal-meta, .public-header, .public-footer, .legal-footer-actions {
+    display: none !important;
+  }
+  .legal-wrapper { padding: 0; }
+  .legal-card { box-shadow: none; border: none; padding: 0; }
+  body { background: white; }
+}
+
+/* --- Button Overrides for Legal Page --- */
+.legal-buttons .btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+  color: white !important;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 4px 12px rgba(70, 72, 212, 0.2);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legal-buttons .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(70, 72, 212, 0.3);
+  opacity: 0.95;
+}
+
+.legal-buttons .btn-outline {
+  background: transparent;
+  color: var(--on-surface);
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--outline-variant);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legal-buttons .btn-outline:hover {
+  background-color: var(--surface-container-low);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Fix for Material Symbol inside Outline Button */
+.legal-buttons .btn-outline .material-symbols-outlined {
+  font-size: 20px;
+}

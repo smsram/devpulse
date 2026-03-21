@@ -1,0 +1,87 @@
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero {
+  padding: 6rem 1.5rem 5rem;
+  text-align: center; position: relative; overflow: hidden;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-title { font-family: var(--font-headline); font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 1.5rem; line-height: 1.1; color: var(--on-surface); }
+.text-gradient { background: linear-gradient(135deg, var(--primary), var(--primary-container)); -webkit-background-clip: text; color: transparent; }
+.hero-subtitle { font-size: clamp(1.125rem, 2vw, 1.25rem); color: var(--on-surface-variant); max-width: 42rem; margin: 0 auto 3rem; line-height: 1.6; }
+
+.search-wrapper { position: relative; max-width: 42rem; margin: 0 auto; }
+.search-icon { position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); color: var(--outline); font-size: 1.5rem; }
+.search-input { width: 100%; padding: 1.25rem 1.5rem 1.25rem 3.5rem; background: var(--surface-container-lowest); border: 1px solid var(--outline-variant); border-radius: 9999px; box-shadow: 0 10px 25px -5px rgba(70, 72, 212, 0.08); font-size: 1rem; font-family: var(--font-body); color: var(--on-surface); transition: all 0.3s ease; }
+.search-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(70, 72, 212, 0.15); }
+
+.directory-section { padding-bottom: 6rem; }
+.section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; opacity: 0; }
+
+.dev-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+
+.dev-card {
+  background: var(--surface-container-lowest); padding: 1.5rem; border-radius: 1rem; border: 1px solid rgba(70, 72, 212, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; opacity: 0;
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; display: flex; flex-direction: column;
+}
+.dev-card:hover { box-shadow: 0 20px 25px -5px rgba(70, 72, 212, 0.1); transform: translateY(-4px); border-color: rgba(70, 72, 212, 0.15); }
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; }
+
+/* AVATAR FIX */
+.avatar-wrapper {
+  position: relative;
+  display: inline-block; /* Forces wrapper to perfectly hug the image */
+  width: 4rem; height: 4rem;
+}
+.avatar, .avatar-placeholder { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.avatar-placeholder { background: var(--surface-container-high); display: flex; align-items: center; justify-content: center; color: var(--outline); font-size: 1.5rem; }
+.avatar { filter: grayscale(100%); transition: all 0.4s ease; }
+.dev-card:hover .avatar { filter: grayscale(0%); transform: scale(1.05); }
+
+.pulse-dot {
+  position: absolute; bottom: 0; right: 0; width: 1rem; height: 1rem;
+  background: #10b981; border: 3px solid var(--surface-container-lowest); border-radius: 50%;
+  animation: pulse 2s infinite; z-index: 2;
+}
+
+.badge { font-size: 0.65rem; font-weight: 700; font-family: var(--font-headline); text-transform: uppercase; letter-spacing: 0.05em; background: var(--surface-container-low); color: var(--on-surface-variant); padding: 0.35rem 0.6rem; border-radius: 0.375rem; }
+.dev-name { font-family: var(--font-headline); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.25rem; color: var(--on-surface); }
+.dev-role { font-size: 0.875rem; color: var(--on-surface-variant); margin-bottom: 1.5rem; font-weight: 500; }
+
+.skills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; min-height: 26px; }
+.skill-tag { background: var(--surface-container-low); padding: 0.35rem 0.75rem; font-size: 0.75rem; font-weight: 600; color: var(--on-surface-variant); border-radius: 0.375rem; transition: background-color 0.2s ease; }
+.dev-card:hover .skill-tag { background: var(--surface-container); }
+
+.btn-full { width: 100%; padding: 0.75rem; background: var(--surface-container-low); color: var(--primary); font-family: var(--font-headline); font-weight: 700; border: none; border-radius: 0.5rem; cursor: pointer; transition: all 0.2s ease; margin-top: auto; }
+.dev-card:hover .btn-full { background: var(--primary); color: var(--on-primary); }
+
+.pagination { display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin-top: 4rem; opacity: 0; animation: fadeUp 0.6s 0.8s forwards; }
+.page-btn { display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 0.5rem; border: none; background: var(--surface-container-lowest); color: var(--on-surface-variant); font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+.page-btn:hover { background: var(--surface-container-low); color: var(--primary); }
+.page-btn.active { background: var(--primary); color: var(--on-primary); }
+
+/* Disabled state for pagination arrows */
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: var(--surface-container-lowest);
+  color: var(--outline-variant);
+}
+
+.page-btn:disabled:hover {
+  background-color: var(--surface-container-lowest); /* Prevent hover color change */
+  color: var(--outline-variant);
+}
+
+/* Styling for the ellipsis (...) when there are many pages */
+.page-ellipsis {
+  padding: 0 0.5rem;
+  color: var(--outline-variant);
+  font-weight: 700;
+  letter-spacing: 2px;
+}

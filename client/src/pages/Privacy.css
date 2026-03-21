@@ -1,0 +1,53 @@
+/* --- Shared Base (Reused from Terms response) --- */
+.legal-wrapper { background-color: var(--surface); padding: 4rem 1rem; }
+.legal-container { max-width: 850px; margin: 0 auto; }
+.legal-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; }
+.legal-back-link { display: flex; align-items: center; gap: 0.5rem; color: var(--primary); text-decoration: none; font-weight: 700; transition: transform 0.2s; }
+.legal-back-link:hover { transform: translateX(-4px); }
+
+/* Status Badge */
+.legal-status-badge {
+  background-color: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.status-dot-active { width: 8px; height: 8px; border-radius: 50%; background: #10B981; animation: pulse 2s infinite; }
+
+/* Main Card */
+.legal-card { background: white; border-radius: 1.25rem; padding: 3rem; box-shadow: 0 12px 40px rgba(70, 72, 212, 0.06); border: 1px solid var(--surface-container); position: relative; }
+.legal-actions-top { position: absolute; top: 3rem; right: 3rem; }
+
+/* Transparency Grid */
+.transparency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+.transparency-card { background: var(--surface-container-low); padding: 1.5rem; border-radius: 0.75rem; }
+.transparency-card h3 { font-family: var(--font-headline); font-size: 1rem; font-weight: 800; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; color: var(--on-surface); }
+.transparency-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+.transparency-card li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: var(--on-surface-variant); font-weight: 500; }
+.transparency-card .material-symbols-outlined { font-size: 1.25rem; }
+.tracking .material-symbols-outlined { color: var(--primary); }
+.private .material-symbols-outlined { color: var(--error); }
+
+/* Info Callout */
+.info-callout { background: rgba(70, 72, 212, 0.05); border-left: 4px solid var(--primary); padding: 1.5rem; border-radius: 0 0.5rem 0.5rem 0; margin-bottom: 2rem; }
+.info-callout p { margin-bottom: 0 !important; font-size: 0.95rem; }
+
+/* Accordion */
+.rights-accordion details { background: var(--surface-container); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; cursor: pointer; }
+.rights-accordion summary { font-weight: 800; color: var(--on-surface); display: flex; justify-content: space-between; align-items: center; list-style: none; font-size: 0.95rem; }
+.rights-accordion summary::-webkit-details-marker { display: none; }
+.rights-accordion details[open] summary .material-symbols-outlined { transform: rotate(180deg); }
+.rights-accordion p { margin-top: 1rem; font-size: 0.9rem; color: var(--on-surface-variant); }
+
+/* Buttons & Links */
+.legal-link { color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+.legal-trust-note { text-align: center; margin-top: 3rem; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; color: var(--outline); opacity: 0.6; }
+
+/* Shared Component Buttons */
+.btn-sm { padding: 0.4rem 1rem !important; font-size: 0.8rem !important; }

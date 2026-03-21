@@ -1,0 +1,461 @@
+.settings-wrapper {
+  animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  padding-bottom: 100px;
+}
+
+.profile-edit-card {
+  background: var(--surface-container-lowest);
+  border-radius: 1rem;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(70, 72, 212, 0.08);
+  margin-bottom: 2.5rem;
+}
+
+.card-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--primary-container));
+}
+
+.profile-edit-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .profile-edit-layout { flex-direction: row; }
+}
+
+.avatar-edit-group {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.edit-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  object-fit: cover;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.avatar-edit-group:hover .avatar-overlay { opacity: 1; }
+.avatar-overlay .material-symbols-outlined { color: white; font-size: 2rem; }
+
+.profile-fields { flex: 1; width: 100%; }
+
+.profile-header-inputs { margin-bottom: 1.5rem; }
+
+.input-row { position: relative; display: flex; align-items: center; }
+
+.input-name {
+  width: 100%;
+  font-family: var(--font-headline);
+  font-size: 2rem;
+  font-weight: 800;
+  border: none;
+  background: transparent;
+  color: var(--on-surface);
+  padding: 0;
+}
+
+.edit-hint { color: var(--outline-variant); margin-left: 0.5rem; font-size: 1.25rem; }
+
+.input-role {
+  width: 100%;
+  font-weight: 600;
+  color: var(--primary);
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 1.125rem;
+}
+
+.input-bio {
+  width: 100%;
+  background: var(--surface-container-low);
+  border: none;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.938rem;
+  line-height: 1.6;
+  color: var(--on-surface-variant);
+  resize: none;
+  transition: ring 0.2s;
+}
+
+.input-bio:focus { outline: none; box-shadow: 0 0 0 2px rgba(70, 72, 212, 0.15); }
+
+.settings-section { margin-bottom: 2.5rem; }
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-headline);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--on-surface);
+}
+
+.section-counter { font-size: 0.75rem; font-weight: 600; color: var(--outline); }
+
+.skill-manager-card, .integration-card {
+  background: var(--surface-container-lowest);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--surface-container-high);
+}
+
+.skill-pill-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
+
+.skill-pill-edit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface-container-low);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.skill-pill-edit:hover { background: var(--error-container); }
+
+.remove-skill-btn {
+  background: rgba(0,0,0,0.05);
+  border: none;
+  border-radius: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.remove-skill-btn .material-symbols-outlined { font-size: 0.75rem; }
+.skill-pill-edit:hover .remove-skill-btn { background: var(--error); color: white; }
+
+.add-skill-wrapper { position: relative; }
+.add-skill-wrapper .material-symbols-outlined {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 1.25rem;
+}
+
+.add-skill-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  background: var(--surface-container-low);
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.integration-row { display: flex; gap: 1.5rem; align-items: flex-start; }
+
+.platform-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.platform-icon.github { background: #0f172a; color: white; }
+.platform-icon svg { width: 1.75rem; height: 1.75rem; fill: currentColor; }
+
+.integration-details { flex: 1; }
+.integration-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--outline);
+  margin-bottom: 0.5rem;
+}
+
+.handle-input-group { display: flex; gap: 0.75rem; margin-bottom: 0.5rem; }
+
+.handle-prefix-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: var(--surface-container-low);
+  padding: 0 1rem;
+  border-radius: 0.75rem;
+}
+
+.handle-prefix { font-size: 0.875rem; color: var(--outline); font-weight: 500; }
+
+.handle-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.75rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.btn-sync {
+  background: var(--surface-container-high);
+  border: none;
+  padding: 0 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.813rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-sync:hover { background: var(--surface-variant); }
+
+.sync-timestamp { font-size: 0.688rem; color: var(--outline); font-style: italic; }
+
+.save-action-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+}
+
+.btn-save-changes {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  border: none;
+  font-weight: 800;
+  font-family: var(--font-headline);
+  box-shadow: 0 15px 30px rgba(70, 72, 212, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-save-changes:hover { transform: translateY(-2px); background: var(--primary-container); }
+.btn-save-changes:active { transform: translateY(0); }
+
+/* Input Styling: Smooth & Modern */
+.input-name, .input-role, .input-bio, .add-skill-input, .handle-input {
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Specific styling for the Bio and Skill inputs which have backgrounds */
+.input-bio, .add-skill-input, .handle-prefix-wrapper {
+    border: 1px solid var(--surface-container-high);
+}
+
+/* Smooth Focus States */
+.input-bio:focus, .add-skill-input:focus, .handle-prefix-wrapper:focus-within {
+    border-color: var(--primary);
+    background-color: var(--surface-container-lowest);
+    box-shadow: 0 0 0 4px rgba(70, 72, 212, 0.08);
+    outline: none;
+}
+
+/* Name & Role (Inline-style inputs) */
+.input-name:hover, .input-role:hover {
+    background-color: rgba(70, 72, 212, 0.03);
+    border-radius: 4px;
+}
+
+.input-name:focus, .input-role:focus {
+    background-color: transparent;
+    border-bottom: 2px solid var(--primary);
+    outline: none;
+}
+
+/* Avatar Border Styling */
+.edit-avatar {
+    border: 4px solid var(--surface-container-lowest);
+    transition: transform 0.3s ease;
+}
+
+.avatar-edit-group:hover .edit-avatar {
+    transform: scale(1.02);
+}
+
+/* --- Platform Integration Input Fix --- */
+.handle-prefix-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--surface-container-low);
+  padding: 0 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--surface-container-high); /* Initial border */
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+/* Make the input inside invisible so the wrapper looks like the input */
+.handle-input {
+  flex: 1;
+  background: transparent;
+  border: none !important; /* Remove individual border */
+  padding: 0.75rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--on-surface);
+  box-shadow: none !important; /* Remove individual glow */
+}
+
+.handle-input:focus {
+  outline: none;
+}
+
+/* Glow and border applied to the ENTIRE wrapper when input is active */
+.handle-prefix-wrapper:focus-within {
+  border-color: var(--primary);
+  background-color: var(--surface-container-lowest);
+  box-shadow: 0 0 0 4px rgba(70, 72, 212, 0.08);
+}
+
+/* --- Skill Hover Animation Fix --- */
+.skill-pill-edit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface-container-low);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+/* Subtle hover for the pill itself */
+.skill-pill-edit:hover {
+  background: var(--surface-container-high);
+  border-color: var(--outline-variant);
+}
+
+/* Red tint only when hovering the REMOVE button specifically */
+.remove-skill-btn:hover {
+  background: var(--error);
+  color: white;
+  transform: scale(1.1);
+}
+
+.remove-skill-btn {
+  transition: all 0.2s ease;
+}
+
+/* Fix for handle-input-group and prefix */
+.handle-input-group {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.handle-prefix-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background: var(--surface-container-low);
+  border: 1px solid var(--surface-container-high);
+  border-radius: 0.75rem;
+  padding: 0 1rem;
+  transition: all 0.3s ease;
+}
+
+.handle-prefix-wrapper:focus-within {
+  border-color: var(--primary);
+  background: var(--surface-container-lowest);
+  box-shadow: 0 0 0 4px rgba(70, 72, 212, 0.08);
+}
+
+.handle-input {
+  flex: 1;
+  border: none !important;
+  background: transparent !important;
+  outline: none !important;
+  padding: 0.75rem 0.5rem;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+/* Toast is now fixed-top and won't affect scrolling */
+.Toast-fixed {
+  position: fixed;
+  top: 100px;
+  right: 24px;
+  z-index: 1000;
+}
+
+.empty-avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  background-color: var(--surface-container-high);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--outline-variant);
+  color: var(--outline);
+  transition: all 0.3s ease;
+}
+
+.avatar-edit-group:hover .empty-avatar-placeholder {
+  background-color: var(--surface-container);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.placeholder-icon {
+  font-size: 3rem !important;
+  margin-bottom: 4px;
+}
+
+.upload-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.portfolio-link-icon {
+  background: var(--primary-container);
+  color: var(--on-primary);
+}
