@@ -161,5 +161,3 @@ npm run dev
   * GitHub: [@smsram](https://www.google.com/search?q=https://github.com/smsram)
 
 <!-- end list -->
-
-```
