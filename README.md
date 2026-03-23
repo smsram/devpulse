@@ -74,7 +74,7 @@ devpulse/
 │
 ├── .gitignore              # Ignores node_modules and .env files
 └── README.md               # Project documentation
-
+```
 
 ## 🚀 Local Development Setup
 
