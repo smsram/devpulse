@@ -74,3 +74,92 @@ devpulse/
 │
 ├── .gitignore              # Ignores node_modules and .env files
 └── README.md               # Project documentation
+
+
+## 🚀 Local Development Setup
+
+Follow these steps to run DevPulse on your local machine.
+
+### Prerequisites
+* **Node.js** (v16 or higher)
+* A **MongoDB Atlas** account / cluster
+* A **Cloudinary** account
+* A **GitHub Personal Access Token** (PAT)
+
+### 1. Clone the repository
+```bash
+git clone [https://github.com/smsram/devpulse.git](https://github.com/smsram/devpulse.git)
+cd devpulse
+````
+
+### 2\. Install Dependencies
+
+You will need to install dependencies for both the client and the server.
+
+```bash
+# Install Server dependencies
+cd server
+npm install
+
+# Install Client dependencies
+cd ../client
+npm install
+```
+
+### 3\. Environment Variables
+
+Create a `.env` file in both the `server` and `client` directories.
+
+**server/.env**
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_super_secret_jwt_key
+GITHUB_PAT=your_github_personal_access_token
+CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+```
+
+**client/.env**
+
+```env
+# For local development:
+VITE_API_URL=http://localhost:5000/api
+
+# For production, this is updated to the Render Web Service URL
+```
+
+### 4\. Run the Application
+
+Open two separate terminal windows.
+
+**Terminal 1: Start the Backend**
+
+```bash
+cd server
+npm run dev
+# Server will start on http://localhost:5000
+```
+
+**Terminal 2: Start the Frontend**
+
+```bash
+cd client
+npm run dev
+# Client will start on http://localhost:5173
+```
+
+-----
+
+## 👨‍💻 Author
+
+**Meher Siva Ram Sorampudi**
+
+  * Junior Full-Stack Developer Intern
+  * GitHub: [@smsram](https://www.google.com/search?q=https://github.com/smsram)
+
+<!-- end list -->
+
+```
