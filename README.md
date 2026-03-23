@@ -88,7 +88,7 @@ Follow these steps to run DevPulse on your local machine.
 
 ### 1. Clone the repository
 ```bash
-git clone [https://github.com/smsram/devpulse.git](https://github.com/smsram/devpulse.git)
+git clone https://github.com/smsram/devpulse.git
 cd devpulse
 ````
 
