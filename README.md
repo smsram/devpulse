@@ -9,7 +9,7 @@
 
 **DevPulse** is a full-stack MERN application built as a major practical capstone project. It serves as a real-time dashboard that allows developers to manage their professional identity, track their learning progress, and integrate live repository data directly from the GitHub GraphQL and REST APIs.
 
-🔗 **[View Live Application](https://devpulse-smsram.vercel.app)** *(Replace with your actual Vercel link)*
+🔗 **[View Live Application](https://devpulse-smsram.vercel.app)**
 
 ---
 
@@ -27,10 +27,10 @@
 ## 🛠️ Tech Stack
 
 ### Frontend (Client)
-* **Framework:** React 18 (Bootstrapped with Vite for optimized builds)
+* **Framework:** React 18 (Bootstrapped with Vite)
 * **Routing:** React Router v6
 * **Styling:** Custom Vanilla CSS (Modern CSS properties, Grid, Flexbox, Glassmorphism)
-* **Deployment:** Vercel / Netlify
+* **Deployment:** Vercel 
 
 ### Backend (Server)
 * **Runtime:** Node.js
@@ -42,94 +42,35 @@
 
 ---
 
-## 🚀 Local Development Setup
+## 📁 Project Structure & Cloud Deployment
 
-Follow these steps to run DevPulse on your local machine.
+This repository is structured as a monorepo. The frontend and backend are separated into distinct directories to support independent cloud deployments.
 
-### Prerequisites
-* Node.js (v16 or higher)
-* A MongoDB Atlas account / cluster
-* A Cloudinary account
-* A GitHub Personal Access Token (PAT)
-
-### 1. Clone the repository
-\`\`\`bash
-git clone https://github.com/smsram/devpulse.git
-cd devpulse
-\`\`\`
-
-### 2. Install Dependencies
-You will need to install dependencies for both the client and the server.
-\`\`\`bash
-# Install Server dependencies
-cd server
-npm install
-
-# Install Client dependencies
-cd ../client
-npm install
-\`\`\`
-
-### 3. Environment Variables
-Create a `.env` file in **both** the `server` and `client` directories. 
-
-**`server/.env`**
-\`\`\`env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_super_secret_jwt_key
-GITHUB_PAT=your_github_personal_access_token
-CLOUDINARY_CLOUD_NAME=your_cloudinary_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_API_SECRET=your_cloudinary_api_secret
-\`\`\`
-
-**`client/.env`**
-\`\`\`env
-VITE_API_URL=http://localhost:5000/api
-\`\`\`
-
-### 4. Run the Application
-Open two separate terminal windows.
-
-**Terminal 1: Start the Backend**
-\`\`\`bash
-cd server
-npm run dev
-# Server will start on http://localhost:5000
-\`\`\`
-
-**Terminal 2: Start the Frontend**
-\`\`\`bash
-cd client
-npm run dev
-# Client will start on http://localhost:5173
-\`\`\`
-
----
-
-## 📁 Project Structure
-
-\`\`\`text
+```text
 devpulse/
-├── client/                 # React Frontend (Vite)
-│   ├── src/
-│   │   ├── components/     # Reusable UI elements (Toast, Loader, Navbar)
-│   │   ├── pages/          # Route components (Dashboard, Profile, Auth)
-│   │   ├── services/       # Axios API configurations
-│   │   └── App.jsx         # Main router and layout wrapper
-├── server/                 # Express Backend
-│   ├── middleware/         # Custom JWT Auth middleware
+│
+├── client/                 # 🌐 FRONTEND (Deployed via Vercel)
+│   ├── public/             # Static assets (favicons, manifest)
+│   ├── src/                
+│   │   ├── components/     # Reusable UI elements (Toast, Loader, ConfirmAlert)
+│   │   ├── layouts/        # AppLayout and PublicLayout wrappers
+│   │   ├── pages/          # Route views (Dashboard, Integrations, PublicProfile)
+│   │   ├── services/       # Axios API configurations (api.jsx)
+│   │   ├── App.jsx         # Main router mapping
+│   │   └── main.jsx        # React DOM entry point
+│   ├── package.json        # Client dependencies
+│   └── vite.config.js      # Vite build configuration
+│
+├── server/                 # ⚙️ BACKEND (Deployed via Render)
+│   ├── middleware/         # Custom JWT Auth verification (auth.js)
 │   ├── models/             # Mongoose Schemas (User, Settings, Project)
-│   ├── routes/             # RESTful endpoints (auth, public, settings, github)
-│   └── index.js            # Server entry point
-└── README.md
-\`\`\`
-
----
-
-## 👨‍💻 Author
-
-**Meher Siva Ram Sorampudi**
-* Junior Full-Stack Developer Intern
-* GitHub: [@smsram](https://github.com/smsram)
+│   ├── routes/             # RESTful API endpoints 
+│   │   ├── analytics.js    # GitHub GraphQL data processing
+│   │   ├── auth.js         # Login/Register logic
+│   │   ├── public.js       # Unprotected routes for directory & profiles
+│   │   └── settings.js     # Protected profile & Cloudinary upload routes
+│   ├── package.json        # Server dependencies
+│   └── index.js            # Express server entry point
+│
+├── .gitignore              # Ignores node_modules and .env files
+└── README.md               # Project documentation
